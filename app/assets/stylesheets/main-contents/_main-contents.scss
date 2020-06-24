@@ -1,0 +1,16 @@
+.main-contents{
+  height: 100vh;
+  width: calc(100vw - 300px);
+  background-color: #ffffff;
+  &__group-name{
+    height: 100px;
+  }
+  &__chat-space{
+    height: calc(100vh - 190px);
+    background-color: #fafafa;
+  }
+  &__text-form{
+    height: 90px;
+    background-color: #d2d2d2;
+  }
+}
