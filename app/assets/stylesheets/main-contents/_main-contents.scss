@@ -36,6 +36,27 @@
   &__chat-space{
     height: calc(100vh - 190px);
     background-color: #fafafa;
+    padding-top: 35px;
+    &__text{
+      margin: 0px 0px 46px 40px;
+      height: 57px;
+      &__user{
+        display: flex;
+        &__name{
+          color: #333333;
+          font-size: 16px;
+        }
+        &__time{
+          color: #999999;
+          font-size: 12px;
+        }
+      }
+      &__coment{
+        color: #434A54;
+        font-size: 14px;
+        margin-top: 12px;
+      }
+    }
   }
   &__text-form{
     height: 90px;
