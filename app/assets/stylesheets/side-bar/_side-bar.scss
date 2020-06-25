@@ -8,14 +8,23 @@
     align-items: center;
     justify-content: center;
     &__text{
-      background-color: #d8d8d8;
       height: 20px;
       width: 260px;
       display: flex;
       justify-content: space-between;
+      &__name{
+        color: #ffffff;
+      }
       &__icon{
-        background-color: red;
         width: 60px;
+        display: flex;
+        justify-content: flex-end;
+        &__btn{
+          color: #ffffff;
+          display: block;
+          text-decoration: none;
+          margin-left: 5px;
+        }
       }
     }
   }
