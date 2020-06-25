@@ -4,6 +4,14 @@
   background-color: #253141;
   &__user{
     height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &__text{
+      background-color: #d8d8d8;
+      height: 20px;
+      width: 260px;
+    }
   }
   &__group-list{
     height: calc(100vh - 100px);
