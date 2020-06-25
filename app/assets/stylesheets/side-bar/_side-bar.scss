@@ -31,5 +31,21 @@
   &__group{
     height: calc(100vh - 100px);
     background-color: #2f3e51;
+    display: flex;
+    justify-content: center;
+    &__list{
+      width: 260px;
+      height: 105px;
+      color: #ffffff;
+      font-weight: bold;
+      &__name{
+        font-size: 15px;
+        margin-top: 20px;
+      }
+      &__status{
+        font-size: 11px;
+        margin-top: 5px;
+      }
+    }
   }
 }
