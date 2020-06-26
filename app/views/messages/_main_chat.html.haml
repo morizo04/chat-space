@@ -27,3 +27,11 @@
       .main-contents__chat-space__text__coment
         愛知地球博に出たよ
   .main-contents__text-form
+    .main-contents__text-form__box
+      %form
+        %input.main-contents__text-form__box__sentence{"placeholder": "type a message", "type": "text"}
+          %label.main-contents__text-form__box__sentence__label
+            = icon('fas', 'image', class: "main-contents__text-form__box__sentence__label__img")
+            %input.main-contents__text-form__box__sentence__label__file{type: "file"}
+    %form
+      %input.main-contents__text-form__submit{"value": "SEND", "type": "submit"}
