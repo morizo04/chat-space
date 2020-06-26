@@ -1,0 +1,37 @@
+.main-contents
+  .main-contents__group
+    .main-contents__group__text
+      .main-contents__group__text__name
+        グループ名
+      .main-contents__group__text__user
+        Member:モリゾー キッコロ
+    .main-contents__group__edit
+      = link_to "#"   do
+        .main-contents__group__edit__btn
+          Edit
+  .main-contents__chat-space
+    .main-contents__chat-space__text
+      .main-contents__chat-space__text__user
+        .main-contents__chat-space__text__user__name
+          モリゾー
+        .main-contents__chat-space__text__user__time
+          2019/04/04 (Sat) 16:00
+      .main-contents__chat-space__text__coment
+        私は尾張の森出身です。
+    .main-contents__chat-space__text
+      .main-contents__chat-space__text__user
+        .main-contents__chat-space__text__user__name
+          キッコロ
+        .main-contents__chat-space__text__user__time
+          2019/04/04 (Sat) 16:15
+      .main-contents__chat-space__text__coment
+        愛知地球博に出たよ
+  .main-contents__text-form
+    .main-contents__text-form__box
+      %form
+        %input.main-contents__text-form__box__sentence{"placeholder": "type a message", "type": "text"}
+          %label.main-contents__text-form__box__sentence__label
+            = icon('fas', 'image', class: "main-contents__text-form__box__sentence__label__img")
+            %input.main-contents__text-form__box__sentence__label__file{type: "file"}
+    %form
+      %input.main-contents__text-form__submit{"value": "SEND", "type": "submit"}

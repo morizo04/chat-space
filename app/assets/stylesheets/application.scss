@@ -1,0 +1,14 @@
+@import "reset";
+@import "modules/messages";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+@import "side-bar/side-bar";
+@import "main-contents/main-contents";
+
+.wrapper{
+  display: flex;
+}
+
+a{
+  text-decoration: none;
+}
