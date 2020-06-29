@@ -4,11 +4,5 @@
 @import "font-awesome";
 @import "side-bar/side-bar";
 @import "main-contents/main-contents";
-
-.wrapper{
-  display: flex;
-}
-
-a{
-  text-decoration: none;
-}
+@import "modules/user";
+@import "modules/flash";
