@@ -2,11 +2,11 @@
   .side-bar__user
     .side-bar__user__text
       .side-bar__user__text__name
-        kazuki
+        = current_user.name
       .side-bar__user__text__icon
         = link_to "#"  do
           = icon('far', 'edit', class: "side-bar__user__text__icon__btn")
-        = link_to "#"   do
+        = link_to edit_user_path(current_user)   do
           = icon('fas', 'cog', class: "side-bar__user__text__icon__btn")  
   .side-bar__group
     .side-bar__group__list
