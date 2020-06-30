@@ -28,7 +28,7 @@
         愛知地球博に出たよ
   .main-contents__text-form
     .main-contents__text-form__box
-      %form
+      = form_with model: [@group, @message], html: {class: "Form"}, local: true do |f|
         %input.main-contents__text-form__box__sentence{"placeholder": "type a message", "type": "text"}
           %label.main-contents__text-form__box__sentence__label
             = icon('fas', 'image', class: "main-contents__text-form__box__sentence__label__img")
