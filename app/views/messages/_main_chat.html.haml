@@ -29,9 +29,9 @@
   .main-contents__text-form
     .main-contents__text-form__box
       = form_with model: [@group, @message], html: {class: "Form"}, local: true do |f|
-        %input.main-contents__text-form__box__sentence{"placeholder": "type a message", "type": "text"}
-          %label.main-contents__text-form__box__sentence__label
-            = icon('fas', 'image', class: "main-contents__text-form__box__sentence__label__img")
-            %input.main-contents__text-form__box__sentence__label__file{type: "file"}
-    %form
-      %input.main-contents__text-form__submit{"value": "SEND", "type": "submit"}
+        = f.text_field :content, class: 'main-contents__text-form__box__sentence', placeholder: 'type a message'
+          = f.label :image, class: 'main-contents__text-form__box__sentence__label' do
+          = icon('far', 'image', class: 'main-contents__text-form__box__sentence__label__img')
+          = f.file_field :image, class: 'main-contents__text-form__box__sentence__label__file'
+    = form_with model: [@group, @message], html: {class: "Form"}, local: true do |f|
+      = f.submit 'Send', class: 'main-contents__text-form__submit'
