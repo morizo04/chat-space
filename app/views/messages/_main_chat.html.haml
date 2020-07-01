@@ -2,14 +2,13 @@
   .main-contents__group
     .main-contents__group__text
       .main-contents__group__text__name
-        -# - current_user.groups
         = @group.name
       .main-contents__group__text__user
         Member:
         - @group.users.each do |user|
           =user.name
     .main-contents__group__edit
-      =link_to "#" do
+      =link_to edit_group_path(@group)   do
         .main-contents__group__edit__btn
           Edit
   .main-contents__chat-space
