@@ -2,15 +2,13 @@
   .main-contents__group
     .main-contents__group__text
       .main-contents__group__text__name
-        グループ名
+        a
       .main-contents__group__text__user
-        Member:モリゾー キッコロ
-    .main-contents__group__edit
-      = link_to "#"   do
-        .main-contents__group__edit__btn
-          Edit
+        Member:モリゾーキッコロ
+    =link_to "#", class: ".main-contents__group__edit" do
+      .main-contents__group__edit__btn
+        Edit
   .main-contents__chat-space
-    -# = render  @messages
     - @messages.each do |message|
       .main-contents__chat-space__text
         .main-contents__chat-space__text__user
@@ -20,9 +18,9 @@
             = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
         .main-contents__chat-space__text__coment
           - if message.content.present?
-        %p.Message__content
-          = message.content
-      = image_tag message.image.url, class: 'Message__image' if message.image.present?
+            %p.Message__content
+              = message.content
+          = image_tag message.image.url, class: 'Message__image' if message.image.present?
     -# .main-contents__chat-space__text
     -#   .main-contents__chat-space__text__user
     -#     .main-contents__chat-space__text__user__name
@@ -33,10 +31,10 @@
     -#     愛知地球博に出たよ
   .main-contents__text-form
     .main-contents__text-form__box
-      = form_with model: [@group, @message], html: {class: "Form"}, local: true do |f|
-        = f.text_field :content, class: 'main-contents__text-form__box__sentence', placeholder: 'type a message'
-          = f.label :image, class: 'main-contents__text-form__box__sentence__label' do
-            = icon('fas', 'image', class: "main-contents__text-form__box__sentence__label__img")
-            = f.file_field :image, class: 'main-contents__text-form__box__sentence__label__file'
-    = form_with model: [@group, @message], html: {class: "Form"}, local: true do |f|
-      = f.submit 'Send', class: 'main-contents__text-form__submit'
+    -#   = form_with model: [@group, @message],  local: true do |f|
+    -#     = f.text_field :content, class: 'main-contents__text-form__box__sentence', placeholder: 'type a message'
+    -#       = f.label :image, class: 'main-contents__text-form__box__sentence__label' do
+    -#         = icon('fas', 'image', class: "main-contents__text-form__box__sentence__label__img")
+    -#         = f.file_field :image, class: 'main-contents__text-form__box__sentence__label__file'
+    -# = form_with model: [@group, @message],  local: true do |f|
+    -#   = f.submit 'Send', class: 'main-contents__text-form__submit'
