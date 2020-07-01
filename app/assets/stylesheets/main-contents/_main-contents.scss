@@ -37,6 +37,7 @@
     }
   }
   &__chat-space{
+    overflow: scroll;
     height: calc(100vh - 190px);
     background-color: #fafafa;
     padding-top: 35px;
