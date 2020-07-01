@@ -2,36 +2,33 @@
   .main-contents__group
     .main-contents__group__text
       .main-contents__group__text__name
-        グループ名
+        = @group.name
       .main-contents__group__text__user
-        Member:モリゾー キッコロ
+        Member:
+        - @group.users.each do |user|
+          =user.name
     .main-contents__group__edit
-      = link_to "#"   do
+      =link_to edit_group_path(@group)   do
         .main-contents__group__edit__btn
           Edit
   .main-contents__chat-space
-    .main-contents__chat-space__text
-      .main-contents__chat-space__text__user
-        .main-contents__chat-space__text__user__name
-          モリゾー
-        .main-contents__chat-space__text__user__time
-          2019/04/04 (Sat) 16:00
-      .main-contents__chat-space__text__coment
-        私は尾張の森出身です。
-    .main-contents__chat-space__text
-      .main-contents__chat-space__text__user
-        .main-contents__chat-space__text__user__name
-          キッコロ
-        .main-contents__chat-space__text__user__time
-          2019/04/04 (Sat) 16:15
-      .main-contents__chat-space__text__coment
-        愛知地球博に出たよ
+    - @messages.each do |message|
+      .main-contents__chat-space__text
+        .main-contents__chat-space__text__user
+          .main-contents__chat-space__text__user__name
+            = message.user.name
+          .main-contents__chat-space__text__user__time
+            = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
+        .main-contents__chat-space__text__coment
+          - if message.content.present?
+            %p.Message__content
+              = message.content
+          = image_tag message.image.url, class: 'Message__image' if message.image.present?
   .main-contents__text-form
-    .main-contents__text-form__box
-      %form
-        %input.main-contents__text-form__box__sentence{"placeholder": "type a message", "type": "text"}
-          %label.main-contents__text-form__box__sentence__label
-            = icon('fas', 'image', class: "main-contents__text-form__box__sentence__label__img")
-            %input.main-contents__text-form__box__sentence__label__file{type: "file"}
-    %form
-      %input.main-contents__text-form__submit{"value": "SEND", "type": "submit"}
+    = form_with model: [@group, @message], local: true do |f|
+      .main-contents__text-form__box
+        = f.text_field :content, class: 'main-contents__text-form__box__sentence', placeholder: 'type a message'
+        = f.label :image, class: 'main-contents__text-form__box__sentence__label' do
+          = icon('fas', 'image', class: "main-contents__text-form__box__sentence__label__img")
+          = f.file_field :image, class: 'main-contents__text-form__box__sentence__label__file'
+      = f.submit 'Send', class: 'main-contents__text-form__submit'
