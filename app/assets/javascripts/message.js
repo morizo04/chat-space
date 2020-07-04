@@ -1,3 +1,6 @@
 $(function(){
-  console.log("確認できますか")
+  $("form").on('submit', function(e){
+    e.preventDefault()
+    console.log("hoge")
+  });
 });
