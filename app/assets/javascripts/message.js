@@ -54,7 +54,8 @@ $(function(){
     })
     .done(function(data){
       let html = buildHTML(data);
-      $('.main-contents__chat-space').append(html);      
+      $('.main-contents__chat-space').append(html);
+      $('.main-contents__chat-space').animate({ scrollTop: $('.main-contents__chat-space')[0].scrollHeight});      
       $('form')[0].reset();
     })
   });
