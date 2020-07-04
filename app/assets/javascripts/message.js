@@ -52,5 +52,10 @@ $(function(){
       processData: false,
       contentType: false
     })
+    .done(function(data){
+      let html = buildHTML(data);
+      $('.main-contents__chat-space').append(html);      
+      $('form')[0].reset();
+    })
   });
 });
