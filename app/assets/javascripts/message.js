@@ -40,6 +40,7 @@ $(function(){
     };
   }
 
+
   $("form").on('submit', function(e){
     e.preventDefault()
     let formData = new FormData(this);
@@ -55,8 +56,12 @@ $(function(){
     .done(function(data){
       let html = buildHTML(data);
       $('.main-contents__chat-space').append(html);
-      $('.main-contents__chat-space').animate({ scrollTop: $('.main-contents__chat-space')[0].scrollHeight});      
+      $('.main-contents__chat-space').animate({ scrollTop: $('.main-contents__chat-space')[0].scrollHeight}); 
+      $('.main-contents__text-form__submit').removeAttr('disabled');     
       $('form')[0].reset();
     })
+    .fail(function() {
+      alert("メッセージ送信に失敗しました");
+    });
   });
 });
