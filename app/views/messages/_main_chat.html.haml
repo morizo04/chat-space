@@ -25,7 +25,7 @@
               = message.content
           = image_tag message.image.url, class: 'Message__image' if message.image.present?
   .main-contents__text-form
-    = form_with model: [@group, @message], local: true do |f|
+    = form_with model: [@group, @message],html: { class: "Form" }, local: true do |f|
       .main-contents__text-form__box
         = f.text_field :content, class: 'main-contents__text-form__box__sentence', placeholder: 'type a message'
         = f.label :image, class: 'main-contents__text-form__box__sentence__label' do
